@@ -22,8 +22,8 @@ pruebas02: pruebas02.o funcionesPilaEnt.o pilaEnt.o
 	${CC} pruebas02.o funcionesPilaEnt.o pilaEnt.o -I ../funciones -o pruebas02 ${LDFLAGS}
 funcionesPilaEnt.o: funcionesPilaEnt.cpp funcionesPilaEnt.hpp
 	${CC} -c funcionesPilaEnt.cpp -I ../funciones ${CPPFLAGS}
-pilaEnt.o: ../funciones/pilaEnt.cpp ../funciones/pilaEnt.hpp
-	${CC} -c ../funciones/pilaEnt.cpp -I ../funciones ${CPPFLAGS}
+pilaEnt.o: funciones/pilaEnt.cpp funciones/pilaEnt.hpp
+	${CC} -c funciones/pilaEnt.cpp -I ../funciones ${CPPFLAGS}
 #-----------------------------------------------------------	
 # LIMPIEZA de todo lo generado. Ojo: se borrarán sin preguntar
 clean:

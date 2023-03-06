@@ -7,7 +7,7 @@
 #include <iomanip>
 
 // Tipo PilaEnt y operaciones básicas para el trabajo con pilas de datos
-#include "pilaEnt.hpp"
+#include "funciones/pilaEnt.hpp"
 
 
 // * Notación empleada en las especificaciones:
