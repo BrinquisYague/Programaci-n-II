@@ -5,32 +5,15 @@ using namespace std;
 // * Post: p = [d_1, d_2, ..., d_K] AND numDatos(p) = K
 int numDatos(PilaEnt &p)
 {
-    return p.top;
-}
-
-// Pre:  p = [d_1, d_2, ..., d_K]  AND 0<= n <=K
-// Post: p = [d_1, d_2, ..., d_N] y presenta por pantalla un listado de
-//       los datos apilados en la pila comenzando por la cima, d_N, y acabando
-//       por el del fondo de la pila, d_1. Cada dato lo escribe en una línea,
-//       empleando anchura caracteres y alineado a la derecha. Cada dato es
-//       precedido por el carácter '|' y es seguido por los caracteres ' ' y
-//       '|', tal como se  ilustra a continuación. Tras el último dato se
-//       presenta una linea de la forma "+--...--+", seguida por una línea
-//       en blanco:
-//
-//        |     d_K |
-//        |     ... |
-//        |     d_2 |
-//        |     d_1 |
-//        +---------+
-void mostrar(PilaEnt &p,const int n,const int anchura)
-{
-    if(n == 0)
-        cout <<'+'<<setfill('-')<< setw(anchura+2)<<'+'<<setfill(' ')<<endl;
+    if(estaVacia(p))
+        return 0;
     else
     {
-        cout << '|'<<setw(anchura) <<p.stack[n-1] <<" |"<<endl;
-        mostrar(p,n-1,anchura);
+        int n = cima(p);
+        desapilar(p);
+        int n_datos = numDatos(p);
+        apilar(p,n);
+        return 1 + n_datos;
     }
 }
 
@@ -51,7 +34,17 @@ void mostrar(PilaEnt &p,const int n,const int anchura)
 //        +---------+
 void mostrar(PilaEnt &p, const int anchura)
 {
-    mostrar(p,p.top,anchura);
+    if(estaVacia(p))
+        cout <<'+'<<setfill('-')<< setw(anchura+2)<<'+'<<setfill(' ')<<endl;
+    else
+    {
+        int datoCima = cima(p);
+        cout << '|'<<setw(anchura) <<datoCima <<" |"<<endl;
+        desapilar(p);
+        mostrar(p,anchura);
+        apilar(p,datoCima);
+    }
+
 
 }
 
@@ -97,23 +90,35 @@ void mostrarInvertida(PilaEnt &p,const int n,const int anchura)
 //        |     d_K |
 void mostrarInvertida(PilaEnt &p, const int anchura)
 {
-    mostrarInvertida(p,0,3);
+    if(estaVacia(p))
+        cout <<'+'<<setfill('-')<< setw(anchura+2)<<'+'<<setfill(' ')<<endl;
+    else
+    {
+        int datoCima = cima(p);
+        desapilar(p);
+        mostrarInvertida(p,anchura);
+        apilar(p,datoCima);
+        cout << '|'<<setw(anchura) <<datoCima <<" |"<<endl;
+    }
+
 }
 
-void rotarizq(PilaEnt &p,const int n)
-{
-    if(n >= 0 && n < p.top)
-    {
-        p.stack[n] = p.stack[n+1];
-        rotarizq(p,n+1);
-    }
-}
+
 // Pre:  p = [d_1, d_2, ..., d_K] AND K >= 0
 // Post: p = [d_2, ..., d_K]
 void eliminarFondo(PilaEnt &p)
 {
-    p.top--;
-    rotarizq(p,0);
+    if(!estaVacia(p))
+    {
+        int datoCima = cima(p);
+        desapilar(p);
+        if(!estaVacia(p))
+        {
+            eliminarFondo(p);
+            apilar(p,datoCima);
+        }
+    }
+
 }
 
 
@@ -121,26 +126,30 @@ void eliminarFondo(PilaEnt &p)
 // Post: p = [d_1, ..., d_{(K-i)}, d_{(K-i+2)}, ..., d_K]
 void eliminar(PilaEnt &p, const int i)
 {
-    p.top--;
-    rotarizq(p,i-1);
+    if(i == 1)
+        desapilar(p);
+    else
+    {
+        int datoCima = cima(p);
+        desapilar(p);
+        eliminar(p,i-1);
+        apilar(p,datoCima);
+    }
 }
 
-void rotardcha(PilaEnt &p,const int n)
-{
-    if (n > 0)
-    {
-        p.stack[n] = p.stack[n-1];
-        rotardcha(p,n-1);
-    }
-    
-}
 // Pre:  p = [d_1, d_2, ..., d_K] AND K >= 0
 // Post: p = [nuevo, d_1, d_2, ..., d_K]
 void insertarEnFondo(PilaEnt &pila, const int nuevo)
 {
     
-    rotardcha(pila,pila.top);
-    pila.top++;
-    pila.stack[0] = nuevo;
+    if(estaVacia(pila))
+        apilar(pila,nuevo);
+    else
+    {
+        int datoCima = cima(pila);
+        desapilar(pila);
+        insertarEnFondo(pila,nuevo);
+        apilar(pila,datoCima);
+    }
     
 }

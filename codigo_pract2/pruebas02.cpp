@@ -32,7 +32,7 @@ void pruebasPilaEnteros() {
         73, 79, 83, 89, 97
     };
     // Apila en P los NUM primeros números primos
-    const int NUM = 15;
+    const int NUM = 20;
     for (int i = 1; i <= NUM; ++i) {
         apilar(P, PRIMOS[i-1]);
     }
