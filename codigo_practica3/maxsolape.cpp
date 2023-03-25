@@ -11,7 +11,11 @@
 //    };
 // tiene cinco intervalos, el primero empieza en 1.5 y termina en 8.0.
 
+double distIntervalos(tpInter a, tpInter b)
+{
 
+
+}
 // maxSolFBruta devuelve un registro tpSolape en el que el campo solape
 // es el maximo solape entre parejas de los n primeros intervalos de inters,
 // y los campos interA e interB son los indices de dichos intervalos.
@@ -22,7 +26,28 @@
 // interA=3, interB=0).
 tpSolape maxSolFBruta(double inters[N][2], int n)
 {
+    tpSolape max = {0,0,0};
+    for(unsigned i = 0; i < n; i++)
+    {
+        for(unsigned j = 0; j < n; j++)
+        {
+            if(i != j)
+            {
+                tpInter a = {i,inters[i][0],inters[i][1]};
+                tpInter b = {j,inters[j][0],inters[j][1]};
+                
+                double dist = distIntervalos(a,b);
+                if(dist > max.solape)
+                {
+                    max.interA = a.ind;
+                    max.interB = b.ind;
+                    max.solape = dist;
+                }
+            }
+        }
+    }
 
+    return max;
 }
 
 // Crea un vector de tpInter con los n primeros intervalos de inters.
