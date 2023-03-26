@@ -17,8 +17,11 @@ int main()
     inters[3][1] = 6.0;
     inters[4][0] = 3.5;
     inters[4][1] = 7.0;
+    tpInter indinters[N];
+    crearvind(inters,indinters,5);
     tpSolape max = maxSolFBruta(inters,5);
-    cout << "El solape máximo es entre el intervalo " << max.interA<<" y el intervalo "
-         << max.interB <<" con un valor de : "<< max.solape << endl;
-
+    cout << "El solape máximo es entre el intervalo " << indinters[max.interA].ini<<" -> "<< indinters[max.interA].fin<<" y el intervalo "
+         << indinters[max.interB].ini<<" -> "<< indinters[max.interB].fin<<" con un valor de : "<< max.solape << endl;
+    mergesortIndInters(indinters,0,4);
+    
 }
