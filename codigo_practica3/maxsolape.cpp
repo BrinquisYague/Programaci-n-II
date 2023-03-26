@@ -13,7 +13,20 @@
 
 double distIntervalos(tpInter a, tpInter b)
 {
-
+    if(a.ini <= b.ini && b.ini <= a.fin)
+    {
+        if(b.fin > a.fin)
+            return a.fin - b.ini;
+        else
+            return b.fin - b.ini;
+    }
+    else if(b.ini <= a.ini && a.ini <= b.fin)
+    {
+        if(a.fin > b.fin)
+            return b.fin - a.ini;
+        else
+            return a.fin - a.ini;
+    }
 
 }
 // maxSolFBruta devuelve un registro tpSolape en el que el campo solape
