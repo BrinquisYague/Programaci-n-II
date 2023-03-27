@@ -45,21 +45,20 @@ tpSolape maxSolFBruta(double inters[N][2], int n)
     tpSolape max = {0,0,0};
     for(unsigned i = 0; i < n; i++)
     {
-        for(unsigned j = 0; j < n; j++)
+        for(unsigned j = i+1; j < n; j++)
         {
-            if(i != j)
+           
+            tpInter a = {int(i),inters[i][0],inters[i][1]};
+            tpInter b = {int(j),inters[j][0],inters[j][1]};
+            
+            double dist = distIntervalos(a,b);
+            if(dist > max.solape)
             {
-                tpInter a = {int(i),inters[i][0],inters[i][1]};
-                tpInter b = {int(j),inters[j][0],inters[j][1]};
-                
-                double dist = distIntervalos(a,b);
-                if(dist > max.solape)
-                {
-                    max.interA = a.ind;
-                    max.interB = b.ind;
-                    max.solape = dist;
-                }
+                max.interA = a.ind;
+                max.interB = b.ind;
+                max.solape = dist;
             }
+            
         }
     }
 
@@ -157,6 +156,43 @@ void mergesortIndInters(tpInter indinters[N], int p, int f)
     }
 }
 
+
+tpSolape comb(tpInter indinters[N],int p,int m,int f)
+{
+    if(p > m || m+1 > f)
+    {
+        tpSolape sol;
+        sol.interA = -1;
+        sol.interB = -1;
+        sol.solape= 0;
+        return sol;
+    }
+    else{
+        tpInter izq2de;
+        izq2de.ind=-1; izq2de.ini=0; izq2de.fin=0;
+        for(int i=p;i<=m;i++)
+        {
+            if(indinters[i].fin > izq2de.fin)
+            {
+                izq2de  = indinters[i]; 
+            }
+        }
+        tpSolape sol;
+        sol.interA=-1;sol.interB=-1;sol.solape = 0;
+        for(int i = m+1; i<=f; i++)
+        {
+           double dist = distIntervalos(izq2de,indinters[i]);
+           if(dist > sol.solape)
+           {
+                sol.interA=izq2de.ind;
+                sol.interB=indinters[i].ind;
+                sol.solape=dist;
+           }
+        }
+        return sol;
+    }
+}
+
 // Dado un vector indinters, utiliza la tecnica de Divide y Venceras para
 // devolver el maximo solape entre parejas de intervalos comprendidos
 // entre las componentes indexadas por p y f, ambas incluidas.
@@ -164,14 +200,5 @@ void mergesortIndInters(tpInter indinters[N], int p, int f)
 // el resultado es solape=4.5, interA=0, interB=3
 tpSolape maxSolDyV(tpInter indinters[N], int p, int f)
 {
-    if(p<f)
-    {
-        int medio = (p+f)/2;
-        tpSolape maxIzq = maxSolDyV(indinters,p,medio);
-        tpSolape maxDcha = maxSolDyV(indinters,medio+1,f);
-        if(maxIzq.solape > maxDcha.solape)
-            return maxIzq;
-        else
-            return maxDcha;
-    }
+    
 }
