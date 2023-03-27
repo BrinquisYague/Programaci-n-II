@@ -164,5 +164,14 @@ void mergesortIndInters(tpInter indinters[N], int p, int f)
 // el resultado es solape=4.5, interA=0, interB=3
 tpSolape maxSolDyV(tpInter indinters[N], int p, int f)
 {
-    
+    if(p<f)
+    {
+        int medio = (p+f)/2;
+        tpSolape maxIzq = maxSolDyV(indinters,p,medio);
+        tpSolape maxDcha = maxSolDyV(indinters,medio+1,f);
+        if(maxIzq.solape > maxDcha.solape)
+            return maxIzq;
+        else
+            return maxDcha;
+    }
 }
