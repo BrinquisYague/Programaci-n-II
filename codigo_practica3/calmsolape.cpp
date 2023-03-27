@@ -23,5 +23,7 @@ int main()
     cout << "El solape máximo es entre el intervalo " << indinters[max.interA].ini<<" -> "<< indinters[max.interA].fin<<" y el intervalo "
          << indinters[max.interB].ini<<" -> "<< indinters[max.interB].fin<<" con un valor de : "<< max.solape << endl;
     mergesortIndInters(indinters,0,4);
-    
+    max = maxSolDyV(indinters,0,4);
+    cout << "El solape máximo es entre el intervalo " << indinters[max.interA].ini<<" -> "<< indinters[max.interA].fin<<" y el intervalo "
+         << indinters[max.interB].ini<<" -> "<< indinters[max.interB].fin<<" con un valor de : "<< max.solape << endl;
 }
