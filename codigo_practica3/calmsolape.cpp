@@ -1,14 +1,19 @@
 #include "maxsolape.hpp"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
 double randDouble(double a,double b)
-{}
+{
+    return a + ((double) rand() / RAND_MAX) * (b - a);
+}
 
 int main()
 {
-    int n = 30;
+    srand(time(NULL));
+    int n = 90000;
     double inters[N][2];
     for(int i=0;i<n;i++)
     {
@@ -28,18 +33,22 @@ int main()
     inters[4][0] = 3.5;
     inters[4][1] = 7.0;*/
     tpInter indinters[N];
-    crearvind(inters,indinters,5);
-    tpSolape max = maxSolFBruta(inters,5);
+    crearvind(inters,indinters,n);
+    clock_t t1 = clock();
+    tpSolape max = maxSolFBruta(inters,n);
+    clock_t t2 = clock();
     cout << "El solape máximo es entre el intervalo " << indinters[max.interA].ini<<" -> "<< indinters[max.interA].fin<<" y el intervalo "
-         << indinters[max.interB].ini<<" -> "<< indinters[max.interB].fin<<" con un valor de : "<< max.solape << endl;
-    mergesortIndInters(indinters,0,4);
+         << indinters[max.interB].ini<<" -> "<< indinters[max.interB].fin<<" con un valor de : "<< max.solape << endl<<"Tiempo: "<<float(t2-t1)/CLOCKS_PER_SEC<<endl;
+    mergesortIndInters(indinters,0,n-1);
     cout <<endl;
-    max = maxSolDyV(indinters,0,4);
-    for(int i = 0;i < 5;i++)
+    t1 = clock();
+    max = maxSolDyV(indinters,0,n-1);
+    t2 = clock();
+    /*for(int i = 0;i < n;i++)
     {
         cout<<"ind: "<<indinters[i].ind<<", ini: "<<indinters[i].ini <<", "<<indinters[i].fin<<endl;
-    }
+    }*/
     cout <<endl;
     cout << "El solape máximo es entre el intervalo con indice "<<max.interA<<" y el intervalo con indice "
-         << max.interB <<" con un valor de : "<< max.solape << endl;
+         << max.interB <<" con un valor de : "<< max.solape << endl<<"Tiempo: "<<float(t2-t1)/CLOCKS_PER_SEC<<endl;
 }
