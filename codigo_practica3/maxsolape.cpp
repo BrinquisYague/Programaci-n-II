@@ -45,21 +45,20 @@ tpSolape maxSolFBruta(double inters[N][2], int n)
     tpSolape max = {0,0,0};
     for(unsigned i = 0; i < n; i++)
     {
-        for(unsigned j = 0; j < n; j++)
+        for(unsigned j = i+1; j < n; j++)
         {
-            if(i != j)
+           
+            tpInter a = {int(i),inters[i][0],inters[i][1]};
+            tpInter b = {int(j),inters[j][0],inters[j][1]};
+            
+            double dist = distIntervalos(a,b);
+            if(dist > max.solape)
             {
-                tpInter a = {int(i),inters[i][0],inters[i][1]};
-                tpInter b = {int(j),inters[j][0],inters[j][1]};
-                
-                double dist = distIntervalos(a,b);
-                if(dist > max.solape)
-                {
-                    max.interA = a.ind;
-                    max.interB = b.ind;
-                    max.solape = dist;
-                }
+                max.interA = a.ind;
+                max.interB = b.ind;
+                max.solape = dist;
             }
+            
         }
     }
 
@@ -162,7 +161,22 @@ void mergesortIndInters(tpInter indinters[N], int p, int f)
 // entre las componentes indexadas por p y f, ambas incluidas.
 // Por ejemplo, para el vector del procedimiento anterior,
 // el resultado es solape=4.5, interA=0, interB=3
-tpSolape maxSolDyV(tpInter indinters[N], int p, int f)
+/*tpSolape maxSolDyV(tpInter indinters[N], int p, int f)
 {
-    
-}
+    if(p ==f)
+    {
+        tpSolape sol;
+        sol.interA = -1;
+        sol.interB = -1;
+        sol.solape= 0;
+        return sol;
+    }
+    else
+    {
+        int medio = (p+f)/2;
+        tpSolape izq = maxSolDyV(indinters,p,medio);
+        tpSolape dcha = maxSolDyV(indinters,medio+1,f);
+        tpSolape sol = comb(indinters,izq,dcha,p,medio,f);
+        return sol;
+    }
+}*/
