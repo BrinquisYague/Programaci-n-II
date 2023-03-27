@@ -200,5 +200,31 @@ tpSolape comb(tpInter indinters[N],int p,int m,int f)
 // el resultado es solape=4.5, interA=0, interB=3
 tpSolape maxSolDyV(tpInter indinters[N], int p, int f)
 {
-    
+    if(p ==f)
+    {
+        tpSolape sol;
+        sol.interA = -1;
+        sol.interB = -1;
+        sol.solape= 0;
+        return sol;
+    }
+    else
+    {
+        int medio = (p+f)/2;
+        tpSolape izq = maxSolDyV(indinters,p,medio);
+        tpSolape dcha = maxSolDyV(indinters,medio+1,f);
+        tpSolape comun = comb(indinters,p,medio,f);
+
+        if(izq.solape >= comun.solape && dcha.solape < izq.solape)
+        {
+            return izq;
+        }
+        else if(dcha.solape >= comun.solape)
+        {
+            return dcha;
+        }
+        else{
+            return comun;
+        }
+    }
 }
