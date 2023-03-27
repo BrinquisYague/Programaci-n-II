@@ -3,11 +3,21 @@
 
 using namespace std;
 
+double randDouble(double a,double b)
+{}
+
 int main()
 {
-
+    int n = 30;
     double inters[N][2];
-    inters[0][0] = 1.5;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<2;j++)
+        {
+            inters[i][j]=randDouble(double(i),100);
+        }
+    }
+    /*inters[0][0] = 1.5;
     inters[0][1] = 8.5;
     inters[1][0] = 0.0;
     inters[1][1] = 4.5;
@@ -16,7 +26,7 @@ int main()
     inters[3][0] = 1.0;
     inters[3][1] = 6.0;
     inters[4][0] = 3.5;
-    inters[4][1] = 7.0;
+    inters[4][1] = 7.0;*/
     tpInter indinters[N];
     crearvind(inters,indinters,5);
     tpSolape max = maxSolFBruta(inters,5);
