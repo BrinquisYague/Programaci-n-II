@@ -157,7 +157,7 @@ void mergesortIndInters(tpInter indinters[N], int p, int f)
 }
 
 
-tpSolape comb(tpInter indinters[N],tpSolape izq,tpSolape dcha,int p,int m,int f)
+tpSolape comb(tpInter indinters[N],int p,int m,int f)
 {
     if(p > m || m+1 > f)
     {
@@ -169,6 +169,27 @@ tpSolape comb(tpInter indinters[N],tpSolape izq,tpSolape dcha,int p,int m,int f)
     }
     else{
         tpInter izq2de;
+        izq2de.ind=-1; izq2de.ini=0; izq2de.fin=0;
+        for(int i=p;i<=m;i++)
+        {
+            if(indinters[i].fin > izq2de.fin)
+            {
+                izq2de  = indinters[i]; 
+            }
+        }
+        tpSolape sol;
+        sol.interA=-1;sol.interB=-1;sol.solape = 0;
+        for(int i = m+1; i<=f; i++)
+        {
+           double dist = distIntervalos(izq2de,indinters[i]);
+           if(dist > sol.solape)
+           {
+                sol.interA=izq2de.ind;
+                sol.interB=indinters[i].ind;
+                sol.solape=dist;
+           }
+        }
+        return sol;
     }
 }
 
@@ -192,18 +213,18 @@ tpSolape maxSolDyV(tpInter indinters[N], int p, int f)
         int medio = (p+f)/2;
         tpSolape izq = maxSolDyV(indinters,p,medio);
         tpSolape dcha = maxSolDyV(indinters,medio+1,f);
-        tpSolape sol = comb(indinters,izq,dcha,p,medio,f);
+        tpSolape comun = comb(indinters,p,medio,f);
 
-        if(izq.solape >= sol.solape && dcha.solape < izq.solape)
+        if(izq.solape >= comun.solape && dcha.solape < izq.solape)
         {
             return izq;
         }
-        else if(dcha.solape >= sol.solape)
+        else if(dcha.solape >= comun.solape)
         {
             return dcha;
         }
         else{
-            return sol;
+            return comun;
         }
     }
 }
