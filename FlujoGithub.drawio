@@ -1,0 +1,95 @@
+<mxfile host="app.diagrams.net" modified="2023-10-19T11:58:19.002Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0" etag="uSUAOPFAnSmduE-YxLkA" version="22.0.5" type="github">
+  <diagram name="Page-1" id="ozxdBf5o1T0y6ycwpzWR">
+    <mxGraphModel dx="857" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="duuN96d6mN_fn4IOZpLF-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="duuN96d6mN_fn4IOZpLF-1" target="duuN96d6mN_fn4IOZpLF-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-1" value="&lt;div&gt;Crear en main&lt;/div&gt;&lt;div&gt;carpeta Práctica N&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="duuN96d6mN_fn4IOZpLF-3" target="duuN96d6mN_fn4IOZpLF-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-3" value="Descargar material de la practica en su carpeta " style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="190" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="duuN96d6mN_fn4IOZpLF-5" target="duuN96d6mN_fn4IOZpLF-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-5" value="Generar común para el equipo" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="190" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="duuN96d6mN_fn4IOZpLF-7" target="duuN96d6mN_fn4IOZpLF-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-7" value="Dividir tareas y crear 2 branch separadas" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="705" y="195" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="duuN96d6mN_fn4IOZpLF-9" target="duuN96d6mN_fn4IOZpLF-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-9" value="Realizar tareas" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="705" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="duuN96d6mN_fn4IOZpLF-11" target="duuN96d6mN_fn4IOZpLF-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="665" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-19" value="SI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="duuN96d6mN_fn4IOZpLF-14">
+          <mxGeometry x="-0.2667" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-11" value="&lt;div&gt;Tarea n&lt;/div&gt;&lt;div&gt;Terminada?&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="725" y="460" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="duuN96d6mN_fn4IOZpLF-11" target="duuN96d6mN_fn4IOZpLF-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="825" y="500" />
+              <mxPoint x="825" y="440" />
+              <mxPoint x="765" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-18" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="duuN96d6mN_fn4IOZpLF-15">
+          <mxGeometry x="-0.4263" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="duuN96d6mN_fn4IOZpLF-20" target="duuN96d6mN_fn4IOZpLF-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-20" value="Revision común de funcionamiento" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="540" y="470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="duuN96d6mN_fn4IOZpLF-21" target="duuN96d6mN_fn4IOZpLF-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-24" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="duuN96d6mN_fn4IOZpLF-23">
+          <mxGeometry x="0.1324" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="duuN96d6mN_fn4IOZpLF-21" target="duuN96d6mN_fn4IOZpLF-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-27" value="SI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="duuN96d6mN_fn4IOZpLF-26">
+          <mxGeometry x="-0.1485" y="5" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-21" value="Funciona?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="410" y="460" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="duuN96d6mN_fn4IOZpLF-25" value="Merge a Main" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="630" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
