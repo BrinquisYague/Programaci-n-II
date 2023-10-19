@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-19T12:02:59.152Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0" etag="xybv2tvIuK6Pahndfo6X" version="22.0.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-19T12:04:03.446Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0" etag="2hIgZ_S3KmicjhJgI7L5" version="22.0.5" type="github">
   <diagram name="Page-1" id="ozxdBf5o1T0y6ycwpzWR">
     <mxGraphModel dx="1809" dy="1073" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -129,11 +129,17 @@
         <mxCell id="N8mW-nSy7AZFngnressp-10" value="Compilar Hendrix" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="37" y="650" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N8mW-nSy7AZFngnressp-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="N8mW-nSy7AZFngnressp-12" target="duuN96d6mN_fn4IOZpLF-1">
+        <mxCell id="N8mW-nSy7AZFngnressp-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="N8mW-nSy7AZFngnressp-12" target="N8mW-nSy7AZFngnressp-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="N8mW-nSy7AZFngnressp-12" value="Entregar practica" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="37" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="N8mW-nSy7AZFngnressp-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="N8mW-nSy7AZFngnressp-15" target="duuN96d6mN_fn4IOZpLF-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="N8mW-nSy7AZFngnressp-15" value="Cerrar Ramas de practica3" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="37" y="370" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
